@@ -1,10 +1,10 @@
 import Image from "next/image";
-import Navbar from "../components/navbar";
+import NavbarTop from "../components/navbar";
 
 export default function Home() {
   return (
     <>
-    <Navbar links={[
+    <NavbarTop links={[
       {title: "Home", href: "#", active: true},
       {title: "About", href: "#", active: false},
       {title: "Board Editor", href: "#", active: false},
