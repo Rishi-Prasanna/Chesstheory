@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { kanit, barlow } from "./fonts";
 import "./globals.css";
+// import "./../libraries/font-awesome/font-awesome-pro-main/fontawesome-pro-6.5.1-web/css/solid.css";
 
 
 export const metadata: Metadata = {
