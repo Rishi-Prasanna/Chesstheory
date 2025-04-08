@@ -15,14 +15,14 @@ interface Props {
 const { items, title, baseClassList, replaceClassList } = Astro.props as Props;
 ---
 
-<details class="z-100">
+<details class:list={baseClassList}>
     <summary>{title}</summary>
     <ul>
         {items.map((item) => (
             Array.isArray(item.items) ? 
             (
                 <li>
-                    <Astro.self items={item.items} title={item.title} />
+                    <Astro.self items={item.items} title={item.title} class:list={replaceClassList} />
                 </li>
             ) :
             (
