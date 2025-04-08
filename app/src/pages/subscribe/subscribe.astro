@@ -1,13 +1,9 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Navbar from '../sections/Navbar.astro';
-import Hero from '../sections/Hero.astro';
-import Footer from '../sections/Footer.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../sections/Navbar.astro';
+import Pricing from '../../sections/Pricing.astro';
 ---
-
 <Layout>
 	
 <div class="cursor"></div>
@@ -71,9 +67,7 @@ Contact
 	]},
 ]} />
 
-<Hero title="Learn Chess Openings Fast" product="Chesstheory" description="revolutionary new tool for studying and storing chess openings. Chess openings provide not only different styles of play, but also a valuable insight into the rich history of chess." />
-
-<Footer />
+<Pricing />
 
 
 </div>
