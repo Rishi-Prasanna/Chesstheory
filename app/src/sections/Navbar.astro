@@ -1,0 +1,45 @@
+---
+import Menu from '../components/Menu.astro';
+
+interface Props {
+    title: string,
+    href?: string,
+    items?: any,
+}
+
+
+const { items } = Astro.props as Props;
+/*
+
+
+Normal Structure:
+ul
+    li
+        a or Astro.self items={item.items}
+
+
+{ title: 'Home', href: '/' }, [ A ]
+{ title: 'Learn', items: [ 
+    { title: 'Chess Basics', href: '/learn/chess-basics' },
+    { title: 'Vocabulary', href: '/learn/vocabulary' },
+] },
+*/
+---
+<nav class="navbar bg-base-100 shadow-sm">
+  <div class="navbar-start">
+    <div class="dropdown">
+      <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
+      </div>
+
+      <Menu items={items} baseClassList="menu menu-sm dropdown-content bg-base-100 rounded-box z-100 mt-3 w-52 p-2 shadow" replaceClassList="p-2" />
+    </div>
+    <a class="btn btn-ghost text-xl">daisyUI</a>
+  </div>
+  <div class="navbar-center hidden lg:flex">
+    <Menu items={items} baseClassList="menu menu-horizontal px-1 z-100" replaceClassList="submenu p-2" />
+  </div>
+  <div class="navbar-end">
+    <a class="btn">Button</a>
+  </div>
+</nav>

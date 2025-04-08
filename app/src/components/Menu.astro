@@ -1,0 +1,29 @@
+---
+type Item = {
+    title: string,
+    href?: string,
+    subitems?: any,
+}
+
+interface Props {
+    items: Item[],
+    baseClassList?: string,
+    replaceClassList?: string,
+}
+
+const { items, baseClassList, replaceClassList } = Astro.props as Props;
+---
+<ul class:list={baseClassList}>
+    {items.map((item) => (
+        Array.isArray(item.subitems) ?
+        (
+        <li>
+            <details>
+                <summary>{item.title}</summary>
+                <Astro.self class:list={replaceClassList} items={item.subitems} />
+            </details>
+        </li>
+        ) :
+        (<li><a href={item.href}>{item.title}</a></li>)
+    ))}
+</ul>
