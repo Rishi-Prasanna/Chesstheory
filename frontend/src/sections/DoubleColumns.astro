@@ -1,0 +1,20 @@
+---
+import FeatureList from '../components/feature-list.astro';
+
+const { title, description, align, id, contentType, content } = Astro.props;
+---
+<section id={id ? id : ''} class="da-hero bg-base-200 min-h-screen font-[Kanit]">
+  <div class:list={"da-hero-content flex-col" + (align === 'right' ? 'lg:flex-row' : ' lg:flex-row-reverse')}>
+    <div class="w-1/2 flex justify-center items-center">
+    </div>
+    
+    <div class="w-1/2">
+      <h1 class="text-4xl font-[600] font-[Kanit]">{title}</h1>
+      <p class="text-md font-[300] py-6">
+        {description}
+      </p>
+
+      <FeatureList features={content} />
+    </div>
+  </div>
+</section>

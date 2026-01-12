@@ -1,0 +1,14 @@
+---
+type Feature = {
+    title: string;
+}
+
+const { features } = Astro.props as { features: Feature[] };
+---
+<div class="flex flex-row">
+    {features.map((feature) => (
+        <div class="p-2 first:pl-0 last:pr-0 hover:shadow-xl transition-shadow duration-300 text-center flex items-center justify-center">
+            <p class="text-sm font-[300]"><i class="fa-utility-fill fa-semibold fa-circle-check"></i> {feature.title}</p>
+        </div>
+    ))}
+</div>
