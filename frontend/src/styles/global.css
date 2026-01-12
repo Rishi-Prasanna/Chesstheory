@@ -4,6 +4,6 @@
   root: ":root";
   include: ;
   exclude: ;
-  prefix: "daisy";
+  prefix: "daisy-";
   logs: true;
 }
