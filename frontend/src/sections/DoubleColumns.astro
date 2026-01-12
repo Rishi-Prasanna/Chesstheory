@@ -1,9 +1,9 @@
 ---
-import FeatureList from '../components/feature-list.astro';
+import FeatureList from '../components/static/FeatureList.astro';
 
 const { title, description, align, id, contentType, content } = Astro.props;
 ---
-<section id={id ? id : ''} class="da-hero bg-base-200 min-h-screen font-[Kanit]">
+<section id={id ? id : ''} class="da-hero bg-base-200 min-h-screen font-[Kanit]" data-section>
   <div class:list={"da-hero-content flex-col" + (align === 'right' ? 'lg:flex-row' : ' lg:flex-row-reverse')}>
     <div class="w-1/2 flex justify-center items-center">
     </div>
@@ -14,7 +14,10 @@ const { title, description, align, id, contentType, content } = Astro.props;
         {description}
       </p>
 
-      <FeatureList features={content} />
+
+      {contentType === 'Feature List' && <FeatureList features={content} />}
+
+
     </div>
   </div>
 </section>
