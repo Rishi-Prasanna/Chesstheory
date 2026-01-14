@@ -10,9 +10,8 @@
 /* No prefixes for DaisyUI components. Instead, we will prefix the interactive Vue components. */
 
 :root {
-  /* Light mode gradient */
-  --hero-gradient-from: #e99e24; /* yellowish-orange (Tailwind amber-400) */
-  --hero-gradient-to: #ef4444;   /* red-500 */
+  --hero-gradient-from: #0a52d6; /* Tailwind blue-500 */
+  --hero-gradient-to: #1e3a9a;   /* Tailwind blue-900 */
 }
 
 [data-theme="night"] {
@@ -85,7 +84,7 @@ div, nav {
 }
 
 
-/* kanit-latin-100-normal */
+/* Kanit-latin-100-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -94,7 +93,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-Thin.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-Thin.woff') format('woff');
 }
 
-/* kanit-latin-200-normal */
+/* Kanit-latin-200-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -103,7 +102,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-ExtraLight.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-ExtraLight.woff') format('woff');
 }
 
-/* kanit-latin-300-normal */
+/* Kanit-latin-300-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -112,7 +111,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-Light.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-Light.woff') format('woff');
 }
 
-/* kanit-latin-400-normal */
+/* Kanit-latin-400-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -121,7 +120,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-Regular.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-Regular.woff') format('woff');
 }
 
-/* kanit-latin-500-normal */
+/* Kanit-latin-500-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -130,7 +129,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-Medium.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-Medium.woff') format('woff');
 }
 
-/* kanit-latin-600-normal */
+/* Kanit-latin-600-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -139,7 +138,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-SemiBold.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-SemiBold.woff') format('woff');
 }
 
-/* kanit-latin-700-normal */
+/* Kanit-latin-700-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -148,7 +147,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-Bold.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-Bold.woff') format('woff');
 }
 
-/* kanit-latin-800-normal */
+/* Kanit-latin-800-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -157,7 +156,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-ExtraBold.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-ExtraBold.woff') format('woff');
 }
 
-/* kanit-latin-900-normal */
+/* Kanit-latin-900-normal */
 @font-face {
   font-family: 'Kanit';
   font-style: normal;
@@ -166,7 +165,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-Black.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-Black.woff') format('woff');
 }
 
-/* kanit-latin-100-italic */
+/* Kanit-latin-100-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
@@ -175,7 +174,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-ThinItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-ThinItalic.woff') format('woff');
 }
 
-/* kanit-latin-200-italic */
+/* Kanit-latin-200-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
@@ -184,7 +183,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-ExtraLightItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-ExtraLightItalic.woff') format('woff');
 }
 
-/* kanit-latin-300-italic */
+/* Kanit-latin-300-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
@@ -193,7 +192,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-LightItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-LightItalic.woff') format('woff');
 }
 
-/* kanit-latin-400-italic */
+/* Kanit-latin-400-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
@@ -202,7 +201,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-RegularItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-RegularItalic.woff') format('woff');
 }
 
-/* kanit-latin-500-italic */
+/* Kanit-latin-500-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
@@ -211,7 +210,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-MediumItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-MediumItalic.woff') format('woff');
 }
 
-/* kanit-latin-600-italic */
+/* Kanit-latin-600-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
@@ -220,7 +219,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-SemiBoldItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-SemiBoldItalic.woff') format('woff');
 }
 
-/* kanit-latin-700-italic */
+/* Kanit-latin-700-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
@@ -229,7 +228,7 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-BoldItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-BoldItalic.woff') format('woff');
 }
 
-/* kanit-latin-800-italic */
+/* Kanit-latin-800-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
@@ -238,11 +237,173 @@ div, nav {
   src: url("/resources/fonts/Kanit/Kanit-ExtraBoldItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-ExtraBoldItalic.woff') format('woff');
 }
 
-/* kanit-latin-900-italic */
+/* Kanit-latin-900-italic */
 @font-face {
   font-family: 'Kanit';
   font-style: italic;
   font-display: swap;
   font-weight: 900;
   src: url("/resources/fonts/Kanit/Kanit-BlackItalic.woff2") format('woff2'), url('/resources/fonts/Kanit/Kanit-BlackItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-100-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100;
+  src: url("/resources/fonts/Montserrat/Montserrat-Thin.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-Thin.woff') format('woff');
+}
+
+/* Montserrat-latin-200-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200;
+  src: url("/resources/fonts/Montserrat/Montserrat-ExtraLight.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-ExtraLight.woff') format('woff');
+}
+
+/* Montserrat-latin-300-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 300;
+  src: url("/resources/fonts/Montserrat/Montserrat-Light.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-Light.woff') format('woff');
+}
+
+/* Montserrat-latin-400-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/resources/fonts/Montserrat/Montserrat-Regular.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-Regular.woff') format('woff');
+}
+
+/* Montserrat-latin-500-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 500;
+  src: url("/resources/fonts/Montserrat/Montserrat-Medium.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-Medium.woff') format('woff');
+}
+
+/* Montserrat-latin-600-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/resources/fonts/Montserrat/Montserrat-SemiBold.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-SemiBold.woff') format('woff');
+}
+
+/* Montserrat-latin-700-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/resources/fonts/Montserrat/Montserrat-Bold.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-Bold.woff') format('woff');
+}
+
+/* Montserrat-latin-800-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 800;
+  src: url("/resources/fonts/Montserrat/Montserrat-ExtraBold.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-ExtraBold.woff') format('woff');
+}
+
+/* Montserrat-latin-900-normal */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 900;
+  src: url("/resources/fonts/Montserrat/Montserrat-Black.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-Black.woff') format('woff');
+}
+
+/* Montserrat-latin-100-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 100;
+  src: url("/resources/fonts/Montserrat/Montserrat-ThinItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-ThinItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-200-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 200;
+  src: url("/resources/fonts/Montserrat/Montserrat-ExtraLightItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-ExtraLightItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-300-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 300;
+  src: url("/resources/fonts/Montserrat/Montserrat-LightItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-LightItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-400-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 400;
+  src: url("/resources/fonts/Montserrat/Montserrat-RegularItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-RegularItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-500-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 500;
+  src: url("/resources/fonts/Montserrat/Montserrat-MediumItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-MediumItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-600-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 600;
+  src: url("/resources/fonts/Montserrat/Montserrat-SemiBoldItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-SemiBoldItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-700-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 700;
+  src: url("/resources/fonts/Montserrat/Montserrat-BoldItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-BoldItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-800-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 800;
+  src: url("/resources/fonts/Montserrat/Montserrat-ExtraBoldItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-ExtraBoldItalic.woff') format('woff');
+}
+
+/* Montserrat-latin-900-italic */
+@font-face {
+  font-family: 'Montserrat';
+  font-style: italic;
+  font-display: swap;
+  font-weight: 900;
+  src: url("/resources/fonts/Montserrat/Montserrat-BlackItalic.woff2") format('woff2'), url('/resources/fonts/Montserrat/Montserrat-BlackItalic.woff') format('woff');
 }
