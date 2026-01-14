@@ -1,22 +1,35 @@
 ---
 const { title, description } = Astro.props;
 ---
-<div id="hero" class="hero bg-base-200 min-h-screen w-screen font-[Kanit]">
-  <div class="hero-content text-left">
-    <div class="max-w-lg">
-      <h1 class="text-6xl font-[700] font-[Kanit]">{title}</h1>
-      <div class="py-6">
-        <p class="text-md font-[300] inline">
-          {description}
-          
-          <div class="tooltip inline" data-tip="What's This?">
-            <a href="#DBL" class="btn btn-info w-6 h-6 d-flex rounded-full text-xs p-0 mx-1"><i class="fa-regular fa-info"></i></a>
-          </div>
+<div
+  id="hero"
+  class="hero mt-20 bg-base-200 text-base-content min-h-screen w-screen font-[Kanit]"
+>
+  <div class="hero-content text-center">
+    <div class="max-w-3xl">
+      <h1 class="text-8xl font-[700] bg-clip-text text-transparent" style="background-image: linear-gradient(to right, var(--hero-gradient-from), var(--hero-gradient-to));">
+        {title}
+      </h1>
 
+      <div class="py-6">
+        <p class="text-lg font-[300] inline">
+          {description}
+
+          <span class="tooltip inline" data-tip="What's this?">
+            <a
+              href="#DBL"
+              class="btn btn-info btn-xs rounded-full mx-1"
+              aria-label="More info"
+            >
+              <i class="fa-regular fa-info"></i>
+            </a>
+          </span>
         </p>
-      
       </div>
-      <a class="btn btn-primary btn-lg my-2 rounded-full">Get Started</a>
+
+      <a class="btn btn-primary btn-lg my-2 rounded-full">
+        Get Started
+      </a>
     </div>
   </div>
 </div>

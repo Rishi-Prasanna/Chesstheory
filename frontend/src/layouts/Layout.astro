@@ -7,7 +7,7 @@ import '/src/styles/global.css';
 const { title } = Astro.props;
 ---
 
-<html lang="en">
+<html lang="en" data-theme="night">
 
 <head>
     <title>{title}</title>
@@ -28,13 +28,13 @@ const { title } = Astro.props;
     
 </head>
 
-<body data-theme="dark" onload="start();">
+<body onload="start();">
     <noscript>
         <div class="text-center">
             <div class="centered">
                 <h1>JavaScript Disabled</h1>
-                <p>This portfolio website requires JavaScript in order to function properly and provide a stunning experience. <b>Please enable JavaScript.</b></p>
-                <p>Don't worry--the only cookies I'm using are for user accessibility preferences on this site, and will not exist outside of this site.</p>
+                <p>Chesstheory requires JavaScript in order to function properly and provide a stunning experience. <b>Please enable JavaScript.</b></p>
+                <p>Don't worry--the only cookies I'm using on this site are for user accessibility preferences (such as light and dark mode), and will not exist outside of this site.</p>
             </div>
         </div>
         <style>

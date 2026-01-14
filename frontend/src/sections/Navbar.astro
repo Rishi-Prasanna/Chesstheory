@@ -17,14 +17,14 @@ interface Props {
 
 const { title, items } = Astro.props as Props;
 ---
-<header class="fixed top-0 w-full px-10 py-5 z-100 bg-black">
-  <nav class="navbar shadow-sm font-[Kanit]">
+<header class="fixed top-0 w-full px-10 py-5 z-100 text-base-content bg-base-200">
+  <nav class="navbar font-[Kanit]">
     {/* NAVBAR START */}
     <section class="navbar-start">
       {/* Mobile menu */}
       <div class="dropdown dropdown-hover">
         <button
-          class="btn btn-ghost lg:hidden text-white text-3xl"
+          class="btn btn-ghost lg:hidden text-3xl"
           aria-label="Menu"
         >
           <i class="fa-sharp fa-solid fa-ellipsis"></i>
@@ -34,20 +34,20 @@ const { title, items } = Astro.props as Props;
           {items.map((item) =>
             item.subItems ? (
               <li class="dropdown dropdown-hover text-lg">
-                <div tabindex="0" role="button">
+                <div tabindex="0" role="button" class="text-base-content">
                   {item.title}
                 </div>
                 <ul class="dropdown-content menu p-2 bg-base-100 w-40 shadow rounded-box">
                   {item.subItems.map((subItem) => (
                     <li>
-                      <a href={subItem.href}>{subItem.title}</a>
+                      <a href={subItem.href} class="text-base-content">{subItem.title}</a>
                     </li>
                   ))}
                 </ul>
               </li>
             ) : (
               <li class="text-lg">
-                <a href={item.href}>{item.title}</a>
+                <a href={item.href} class="text-base-content">{item.title}</a>
               </li>
             )
           )}
@@ -55,7 +55,7 @@ const { title, items } = Astro.props as Props;
       </div>
 
       {/* Brand */}
-      <a class="btn btn-ghost text-xl font-[Agrandir] flex items-center justify-center">
+      <a class="btn btn-ghost text-xl font-[Agrandir] flex items-center justify-center text-base-content">
         {title}
       </a>
     </section>
@@ -66,20 +66,20 @@ const { title, items } = Astro.props as Props;
         {items.map((item) =>
           item.subItems ? (
             <li class="dropdown dropdown-hover dropdown-start text-lg">
-              <div tabindex="0" role="button">
+              <div tabindex="0" role="button" class="text-base-content">
                 {item.title} <i class="fa-sharp fa-solid fa-angle-down"></i>
               </div>
               <ul class="dropdown-content menu p-1 ml-0 bg-base-100 w-40 shadow rounded-box top-[80%]">
                 {item.subItems.map((subItem) => (
                   <li>
-                    <a class="p-3 text-lg" href={subItem.href}>{subItem.title}</a>
+                    <a class="p-3 text-lg text-base-content" href={subItem.href}>{subItem.title}</a>
                   </li>
                 ))}
               </ul>
             </li>
           ) : (
             <li class="text-lg">
-              <a href={item.href}>{item.title}</a>
+              <a href={item.href} class="text-base-content">{item.title}</a>
             </li>
           )
         )}
@@ -87,8 +87,33 @@ const { title, items } = Astro.props as Props;
     </section>
 
     {/* NAVBAR END */}
-    <section class="navbar-end">
-      <a class="btn">Button</a>
+    <section class="navbar-end flex items-center">
+      <label class="flex cursor-pointer gap-2 items-center">
+        <i class="fa-solid fa-sun-bright flex-none text-lg"></i>
+        <input type="checkbox" value="synthwave" class="toggle theme-controller" />
+        <i class="fa-utility-fill fa-semibold fa-moon flex-none text-lg"></i>
+      </label>
     </section>
   </nav>
 </header>
+
+
+<script is:inline>
+  const html = document.documentElement
+  const checkbox = document.querySelector(".theme-controller")
+
+  // Load previous theme
+  const storedTheme = localStorage.getItem("theme")
+  if (storedTheme) html.dataset.theme = storedTheme
+
+  // Set initial checkbox
+  if (checkbox) checkbox.checked = html.dataset.theme === "night"
+
+  // Toggle handler
+  checkbox?.addEventListener("change", () => {
+    const newTheme = checkbox.checked ? "night" : "light"
+    html.dataset.theme = newTheme
+    localStorage.setItem("theme", newTheme)
+  })
+
+</script>
