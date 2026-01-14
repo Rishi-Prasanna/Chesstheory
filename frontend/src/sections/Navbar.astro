@@ -1,0 +1,94 @@
+---
+type SubItem = {
+  title: string,
+  href: string,
+}
+
+type Item = {
+  title: string,
+  href?: string,
+  subItems?: SubItem[],
+}
+
+interface Props {
+  title: string,
+  items: Item[],
+}
+
+const { title, items } = Astro.props as Props;
+---
+<header class="fixed top-0 w-full px-10 py-5 z-100 bg-black">
+  <nav class="navbar shadow-sm font-[Kanit]">
+    {/* NAVBAR START */}
+    <section class="navbar-start">
+      {/* Mobile menu */}
+      <div class="dropdown dropdown-hover">
+        <button
+          class="btn btn-ghost lg:hidden text-white text-3xl"
+          aria-label="Menu"
+        >
+          <i class="fa-sharp fa-solid fa-ellipsis"></i>
+        </button>
+
+        <ul class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+          {items.map((item) =>
+            item.subItems ? (
+              <li class="dropdown dropdown-hover text-lg">
+                <div tabindex="0" role="button">
+                  {item.title}
+                </div>
+                <ul class="dropdown-content menu p-2 bg-base-100 w-40 shadow rounded-box">
+                  {item.subItems.map((subItem) => (
+                    <li>
+                      <a href={subItem.href}>{subItem.title}</a>
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ) : (
+              <li class="text-lg">
+                <a href={item.href}>{item.title}</a>
+              </li>
+            )
+          )}
+        </ul>
+      </div>
+
+      {/* Brand */}
+      <a class="btn btn-ghost text-xl font-[Agrandir] flex items-center justify-center">
+        {title}
+      </a>
+    </section>
+
+    {/* NAVBAR CENTER (desktop) */}
+    <section class="navbar-center hidden lg:flex">
+      <ul class="menu menu-horizontal px-1">
+        {items.map((item) =>
+          item.subItems ? (
+            <li class="dropdown dropdown-hover dropdown-start text-lg">
+              <div tabindex="0" role="button">
+                {item.title} <i class="fa-sharp fa-solid fa-angle-down"></i>
+              </div>
+              <ul class="dropdown-content menu p-1 ml-0 bg-base-100 w-40 shadow rounded-box top-[80%]">
+                {item.subItems.map((subItem) => (
+                  <li>
+                    <a class="p-3 text-lg" href={subItem.href}>{subItem.title}</a>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ) : (
+            <li class="text-lg">
+              <a href={item.href}>{item.title}</a>
+            </li>
+          )
+        )}
+      </ul>
+    </section>
+
+    {/* NAVBAR END */}
+    <section class="navbar-end">
+      <a class="btn">Button</a>
+    </section>
+  </nav>
+</header>

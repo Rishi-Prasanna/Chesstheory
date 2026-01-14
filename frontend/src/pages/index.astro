@@ -1,10 +1,34 @@
 ---
 import Layout from '../layouts/Layout.astro';
 
+import Navbar from '../sections/Navbar.astro';
 import Hero from '../sections/Hero.astro';
 import DoubleColumns from '../sections/DoubleColumns.astro';
 ---
 <Layout title="Chesstheory - Science-Backed Chess Improvement">
+
+<Navbar 
+	title="Chesstheory",
+	items={[
+		{title: 'Home', href: '/'},
+		{title: 'Courses', href: '/courses', subItems: [
+			{title: 'Openings', href: '/explorer/openings'},
+			{title: 'Middlegames', href: '/explorer/middlegames'},
+			{title: 'Endgames', href: '/explorer/endgames'},
+			{title: 'Tactics', href: '/explorer/tactics'},
+		]},
+		{title: 'Explorer', href: '/explorer', subItems: [
+			{title: 'Explorer', href: '/explorer'},
+			{title: 'My Repertoire', href: '/repertoire'},
+		]},
+		{title: 'Academy', href: '/academy'},
+		{title: 'Blog', href: '/blog'},
+	]}
+/>
+
+
+<div id="smooth-wrapper">
+<div id="smooth-content">
 
 <Hero
 	title="Learn chess like a pro"
@@ -12,8 +36,8 @@ import DoubleColumns from '../sections/DoubleColumns.astro';
 />
 
 <DoubleColumns
-	title="Decision-Based Learning"
-	description="Decision-Based Learning (DBL) is a science-backed learning method that focuses on understanding decisions and their consequences, instead of robotically memorizing solutions. Chesstheory utilizes DBL by letting students explore multi-move strategies, diverse playing styles, and personalized repertoires to understand why certain moves succeed or fail, rather than robotically memorizing moves."
+	title="Decision-Based-Learning"
+	description="Decision-Based-Learning (DBL) is a science-backed learning method that focuses on understanding decisions and their consequences, instead of robotically memorizing solutions. Chesstheory utilizes DBL by letting students explore multi-move strategies, diverse playing styles, and personalized repertoires to understand why certain moves succeed or fail, rather than robotically memorizing moves."
     align="left"
     id="DBL"
 	contentType="Feature List"
@@ -23,6 +47,9 @@ import DoubleColumns from '../sections/DoubleColumns.astro';
 		{ title: 'Understanding mistakes' },
 	]}
 />
+
+</div>
+</div>
 
 
 </Layout>

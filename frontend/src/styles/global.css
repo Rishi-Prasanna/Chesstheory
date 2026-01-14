@@ -4,9 +4,10 @@
   root: ":root";
   include: ;
   exclude: ;
-  prefix: "da-";
   logs: true;
 }
+
+/* No prefixes for DaisyUI components. Instead, we will prefix the interactive Vue components. */
 
 :root {
     --text-color: rgba(255,255,255,1); /* #ffffff to #000000 */

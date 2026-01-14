@@ -28,7 +28,7 @@ const { title } = Astro.props;
     
 </head>
 
-<body data-theme="dark">
+<body data-theme="dark" onload="start();">
     <noscript>
         <div class="text-center">
             <div class="centered">
@@ -87,13 +87,7 @@ const { title } = Astro.props;
 
     <div class="cursor"></div>
 
-    <div id="smooth-wrapper">
-    <div id="smooth-content">
-
     <slot />
-
-    </div>
-    </div>
     
 </body>
 

@@ -1,22 +1,22 @@
 ---
 const { title, description } = Astro.props;
 ---
-<div id="hero"class="da-hero bg-base-200 min-h-screen w-screen font-[Kanit]">
-  <div class="da-hero-content text-left">
+<div id="hero" class="hero bg-base-200 min-h-screen w-screen font-[Kanit]">
+  <div class="hero-content text-left">
     <div class="max-w-lg">
       <h1 class="text-6xl font-[700] font-[Kanit]">{title}</h1>
       <div class="py-6">
         <p class="text-md font-[300] inline">
           {description}
           
-          <div class="da-tooltip inline" data-tip="What's This?">
-            <a href="#DBL" class="da-btn da-btn-info w-6 h-6 d-flex rounded-full text-xs p-0 mx-1"><i class="fa-regular fa-info"></i></a>
+          <div class="tooltip inline" data-tip="What's This?">
+            <a href="#DBL" class="btn btn-info w-6 h-6 d-flex rounded-full text-xs p-0 mx-1"><i class="fa-regular fa-info"></i></a>
           </div>
 
         </p>
       
       </div>
-      <a class="da-btn da-btn-primary da-btn-lg my-2 rounded-full">Get Started</a>
+      <a class="btn btn-primary btn-lg my-2 rounded-full">Get Started</a>
     </div>
   </div>
 </div>
