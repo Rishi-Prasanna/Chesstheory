@@ -8,12 +8,12 @@ const { title, description } = Astro.props;
 >
   <div class="hero-content text-center">
     <div class="max-w-3xl">
-      <h1 class="text-8xl font-[700] bg-clip-text text-transparent leading-[1.15]" style="background-image: linear-gradient(to right, var(--hero-gradient-from), var(--hero-gradient-to));">
+      <h1 class="text-6xl lg:text-8xl font-[700] bg-clip-text text-transparent leading-[1.15]" style="background-image: linear-gradient(to right, var(--hero-gradient-from), var(--hero-gradient-to));">
         {title}
       </h1>
 
       <div class="py-6">
-        <p class="text-2xl font-[300] inline">
+        <p class="text-lg lg:text-2xl font-[300] inline">
           {description}
 
           <span class="tooltip inline" data-tip="What's this?">
@@ -28,7 +28,7 @@ const { title, description } = Astro.props;
         </p>
       </div>
 
-      <a class="btn btn-primary btn-xl my-2 rounded-full">
+      <a class="btn btn-primary btn-lg lg:btn-xl my-2 rounded-full">
         Get Started
       </a>
     </div>
