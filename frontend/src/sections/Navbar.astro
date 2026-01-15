@@ -1,85 +1,70 @@
 ---
-type SubItem = {
-  title: string,
-  href: string,
-}
+type SubItem =
+  | { type: "item"; title: string; href: string }
+  | { type: "separator" }
 
 type Item = {
-  title: string,
-  href?: string,
-  subItems?: SubItem[],
+  title: string
+  href?: string
+  subItems?: SubItem[]
 }
 
 interface Props {
-  title: string,
-  items: Item[],
+  title: string
+  items: Item[]
 }
 
-const { title, items } = Astro.props as Props;
+const { title, items } = Astro.props as Props
 ---
-<header class="fixed top-0 w-full px-10 py-5 z-100 text-base-content bg-base-200">
-  <nav class="navbar font-[Kanit]">
+
+<header class="fixed top-0 w-full z-50 bg-base-200 text-base-content font-[Kanit]">
+  <nav class="navbar px-10 py-5">
     {/* NAVBAR START */}
     <section class="navbar-start">
-      {/* Mobile menu */}
-      <div class="dropdown dropdown-hover">
-        <button
-          class="btn btn-ghost lg:hidden text-3xl"
-          aria-label="Menu"
-        >
-          <i class="fa-sharp fa-solid fa-ellipsis"></i>
-        </button>
+      {/* MOBILE MENU BUTTON */}
+      <label
+        for="mobile-drawer"
+        class="btn btn-ghost text-3xl lg:hidden"
+        aria-label="Menu"
+      >
+        <i class="fa-sharp fa-solid fa-ellipsis"></i>
+      </label>
 
-        <ul class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-          {items.map((item) =>
-            item.subItems ? (
-              <li class="dropdown dropdown-hover text-lg">
-                <div tabindex="0" role="button" class="text-base-content">
-                  {item.title}
-                </div>
-                <ul class="dropdown-content menu p-2 bg-base-100 w-40 shadow rounded-box">
-                  {item.subItems.map((subItem) => (
-                    <li>
-                      <a href={subItem.href} class="text-base-content">{subItem.title}</a>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ) : (
-              <li class="text-lg">
-                <a href={item.href} class="text-base-content">{item.title}</a>
-              </li>
-            )
-          )}
-        </ul>
-      </div>
-
-      {/* Brand */}
-      <a class="btn btn-ghost text-xl font-[Agrandir] flex items-center justify-center text-base-content">
+      {/* BRAND */}
+      <a
+        href="/"
+        class="btn btn-ghost text-xl font-[Agrandir] flex items-center justify-center text-base-content"
+      >
         {title}
       </a>
     </section>
 
-    {/* NAVBAR CENTER (desktop) */}
+    {/* DESKTOP NAV */}
     <section class="navbar-center hidden lg:flex">
       <ul class="menu menu-horizontal px-1">
         {items.map((item) =>
           item.subItems ? (
-            <li class="dropdown dropdown-hover dropdown-start text-lg">
-              <div tabindex="0" role="button" class="text-base-content">
-                {item.title} <i class="fa-sharp fa-solid fa-angle-down"></i>
+            <li class="dropdown dropdown-hover text-lg">
+              <div tabindex="0" role="button">
+                {item.title} <i class="fa-solid fa-angle-down ml-1"></i>
               </div>
-              <ul class="dropdown-content menu p-1 ml-0 bg-base-100 w-40 shadow rounded-box top-[80%]">
-                {item.subItems.map((subItem) => (
-                  <li>
-                    <a class="p-3 text-lg text-base-content" href={subItem.href}>{subItem.title}</a>
-                  </li>
-                ))}
+              <ul class="dropdown-content menu p-2 bg-base-100 w-52 shadow rounded-box m-0">
+                {item.subItems.map((subItem) =>
+                  subItem.type === "separator" ? (
+                    <li class="flex justify-center my-2 text-lg items-center">
+                      <span class="w-[90%] h-[1px] p-0 bg-base-content rounded-full" />
+                    </li>
+                  ) : (
+                    <li class="text-lg">
+                      <a href={subItem.href} class="p-4">{subItem.title}</a>
+                    </li>
+                  )
+                )}
               </ul>
             </li>
           ) : (
             <li class="text-lg">
-              <a href={item.href} class="text-base-content">{item.title}</a>
+              <a href={item.href}>{item.title}</a>
             </li>
           )
         )}
@@ -88,32 +73,100 @@ const { title, items } = Astro.props as Props;
 
     {/* NAVBAR END */}
     <section class="navbar-end flex items-center">
-      <label class="flex cursor-pointer gap-2 items-center">
-        <i class="fa-solid fa-sun-bright flex-none text-lg"></i>
-        <input type="checkbox" value="synthwave" class="toggle theme-controller" />
-        <i class="fa-utility-fill fa-semibold fa-moon flex-none text-lg"></i>
+      <label class="flex gap-2 items-center cursor-pointer">
+        <i class="fa-solid fa-sun-bright"></i>
+        <input type="checkbox" class="toggle theme-controller" />
+        <i class="fa-solid fa-moon"></i>
       </label>
     </section>
   </nav>
-</header>
 
+  {/* MOBILE DRAWER (ONLY active for lg:hidden) */}
+  <div class="drawer lg:hidden">
+    <!-- Drawer toggle checkbox -->
+    <input id="mobile-drawer" type="checkbox" class="drawer-toggle" />
+
+    <!-- Drawer side panel -->
+    <nav class="drawer-side">
+      <!-- Overlay to close drawer -->
+      <label for="mobile-drawer" class="drawer-overlay"></label>
+
+      <!-- Drawer content -->
+      <ul class="menu w-full bg-base-100 p-6 mt-[80px]">
+        {items.map((item) =>
+          item.subItems ? (
+            <details class="collapse collapse-arrow bg-base-100 rounded-box my-1">
+              <summary class="collapse-title text-lg font-semibold flex items-center h-12 px-4 cursor-pointer">
+                <span>{item.title}</span>
+              </summary>
+              <div class="collapse-content p-0">
+                <ul class="menu w-full">
+                  {item.subItems.map((subItem) =>
+                    subItem.type === "separator" ? (
+                      <li class="flex justify-center my-2">
+                        <span class="w-[98%] h-[1px] bg-base-content rounded-full p-0"></span>
+                      </li>
+                    ) : (
+                      <li class="text-lg">
+                        <a
+                          href={subItem.href}
+                          onclick="document.getElementById('mobile-drawer').checked = false"
+                          class="block h-12 px-4 flex items-center"
+                        >
+                          {subItem.title}
+                        </a>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+            </details>
+          ) : (
+            <li class="menu-item my-1">
+              <a
+                href={item.href}
+                onclick="document.getElementById('mobile-drawer').checked = false"
+                class="text-lg block h-12 px-4 flex items-center"
+              >
+                {item.title}
+              </a>
+            </li>
+          )
+        )}
+      </ul>
+    </nav>
+  </div>
+  {/* End mobile drawer */}
+
+
+</header>
+<script is:inline>
+  const drawerCheckbox = document.getElementById('mobile-drawer');
+
+  // Close drawer on resize if window becomes lg or larger
+  const lgBreakpoint = 1024; // Tailwind's lg is 1024px
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= lgBreakpoint && drawerCheckbox?.checked) {
+      drawerCheckbox.checked = false;
+    }
+  });
+</script>
 
 <script is:inline>
-  const html = document.documentElement
-  const checkbox = document.querySelector(".theme-controller")
+  const html = document.documentElement;
+  const checkbox = document.querySelector(".theme-controller");
 
-  // Load previous theme
-  const storedTheme = localStorage.getItem("theme")
-  if (storedTheme) html.dataset.theme = storedTheme
+  // Load previously selected theme from localStorage
+  const storedTheme = localStorage.getItem("theme");
+  if (storedTheme) html.dataset.theme = storedTheme;
 
-  // Set initial checkbox
-  if (checkbox) checkbox.checked = html.dataset.theme === "night"
+  // Set initial toggle state
+  if (checkbox) checkbox.checked = html.dataset.theme === "night";
 
-  // Toggle handler
+  // Listen for toggle changes
   checkbox?.addEventListener("change", () => {
-    const newTheme = checkbox.checked ? "night" : "light"
-    html.dataset.theme = newTheme
-    localStorage.setItem("theme", newTheme)
-  })
-
+    const newTheme = checkbox.checked ? "night" : "light";
+    html.dataset.theme = newTheme;
+    localStorage.setItem("theme", newTheme);
+  });
 </script>

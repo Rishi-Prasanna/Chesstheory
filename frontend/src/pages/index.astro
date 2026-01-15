@@ -10,16 +10,17 @@ import DoubleColumns from '../sections/DoubleColumns.astro';
 <Navbar 
 	title="Chesstheory",
 	items={[
-		{title: 'Home', href: '/'},
 		{title: 'Courses', href: '/courses', subItems: [
-			{title: 'Openings', href: '/explorer/openings'},
-			{title: 'Middlegames', href: '/explorer/middlegames'},
-			{title: 'Endgames', href: '/explorer/endgames'},
-			{title: 'Tactics', href: '/explorer/tactics'},
+			{type: "item", title: 'Openings', href: '/explorer/openings'},
+			{type: "item", title: 'Middlegames', href: '/explorer/middlegames'},
+			{type: "item", title: 'Endgames', href: '/explorer/endgames'},
+			{type: "item", title: 'Tactics', href: '/explorer/tactics'},
+			{type: "separator"},
+			{type: "item", title: 'Create a Course', href: '/explorer/createcourse'},
 		]},
 		{title: 'Explorer', href: '/explorer', subItems: [
-			{title: 'Explorer', href: '/explorer'},
-			{title: 'My Repertoire', href: '/repertoire'},
+			{type: "item", title: 'Explorer', href: '/explorer'},
+			{type: "item", title: 'My Repertoire', href: '/repertoire'},
 		]},
 		{title: 'Academy', href: '/academy'},
 		{title: 'Jobs', href: '/jobs'},
